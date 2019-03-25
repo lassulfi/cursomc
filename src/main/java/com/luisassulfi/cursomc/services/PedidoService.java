@@ -68,7 +68,8 @@ public class PedidoService {
 			ip.setPedido(obj);
 		}
 		itemPedidoRepository.saveAll(obj.getItens());
-		emailService.sendOrderConfirmationEmail(obj);
+		//TODO realizar o teste online de envio de email aula 65 - 24:22
+		emailService.sendOrderConfirmationHtmlEmail(obj);
 			
 		return obj;
 	}
