@@ -11,14 +11,14 @@
 		</h1>
 		<p>
 			Instante: <span
-				th:text="${dates.format(pedido.instante, 'dd/MM/yyyy HH:mm')}"></span>
+				th:text="${#dates.format(pedido.instante, 'dd/MM/yyyy hh:mm')}"></span>
 		</p>
 		<p>
 			Cliente: <span th:text="${pedido.cliente.nome}"></span>
 		</p>
 		<p>
 			Situação do pagamento: <span
-				th:text="$pedido.pagamento.estado.descricao}"></span>
+				th:text="${pedido.pagamento.estado.descricao}"></span>
 		</p>
 		<h3>Detalhes do pedido</h3>
 		<table border="1">
@@ -32,14 +32,14 @@
 				<td th:text="${item.produto.nome}">nome</td>
 				<td th:text="${item.quantidade}">quantidade</td>
 				<td
-					th:text="${#numbers.formatDecimal(item.preco, 0, POINT, 2, 'COMMA')}">preço</td>
+					th:text="${#numbers.formatDecimal(item.preco, 0, 'POINT', 2, 'COMMA')}">preço</td>
 				<td
-					th:text="${#numbers.formatDecimal(item.subTotal, 0, POINT, 2, 'COMMA')}">subtotal</td>
+					th:text="${#numbers.formatDecimal(item.subTotal, 0, 'POINT', 2, 'COMMA')}">subtotal</td>
 			</tr>
 		</table>
 		<p>
 			Valor total: <span
-				th:text="${#numbers.formatDecimal(pedido.valorTotal, 0, POINT, 2, 'COMMA')}"></span>
+				th:text="${#numbers.formatDecimal(pedido.valorTotal, 0, 'POINT', 2, 'COMMA')}"></span>
 		</p>
 	</div>
 </body>

@@ -1,0 +1,39 @@
+[33mf977f13[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m Email HTML (sem testar)
+[33m8aad9f2[m[33m ([m[1;31morigin/master[m[33m)[m Implementando SmtpEmailService com servidor do Google
+[33mc40be22[m MockEmailService com Logger: Padroes Strategy e Template
+[33m54e49ed[m Implementando toString de Pedido
+[33m6a5530d[m[33m ([m[1;31mheroku/master[m[33m)[m Configuracao e envio do projeto para producao
+[33m5d6e226[m Criando o profile de desenvolvimento
+[33m9c86bb1[m Criando o profile de teste
+[33m8fd25c0[m Inserindo Pedido
+[33m0798870[m Sub-total e total do pedido
+[33mfbba657[m Busca de produtos por nome e categorias
+[33ma619fe4[m Validacao customizada: email nao repetido na atualizacao de Cliente
+[33m361490c[m Validacao customizada: email nao repetido na insercao de Cliente
+[33m59c1a9d[m Validação customizada de CPF ou CNPJ na insercao de Cliente
+[33maaadf90[m Ajustando e testando a delacao de Cliente
+[33m9b82b88[m Inserindo um novo cliente com POST
+[33m64a684b[m Correcoes: update em CategoriaService e construtor de Pagamento
+[33m12ecf69[m PUT, DELETE e GET para Cliente
+[33md9e7845[m Personalizando o retorno da validação
+[33mf8fbd54[m Validação sintática com Bean Validation
+[33mefe5754[m Paginação com parâmetros opcionais de requisição
+[33m74bc779[m Listando todas as categorias com DTO
+[33md0b73f6[m Deletando uma Categoria com DELETE
+[33me99980c[m Atualizando Categoria com PUT. Outros pequenos ajustes
+[33m609833d[m Inserindo uma nova Categoria com POST
+[33m099084a[m Atualização: utilizando somente JsonIgnore
+[33m4b8f414[m Endpoint /pedidos/{id} disponibilizado
+[33mba9d3fd[m ItemPedido e ItemPedidoPK
+[33m7001049[m Pedido, EstadoPagamento e Pagamento
+[33m7c8b70b[m Endpoint clientes/{id} disponível
+[33mb901000[m Cliente, TipoCliente, telefones e enderecos
+[33m15b7016[m Estado e cidade
+[33m8dcdaa7[m Ajustes no endpoint /categorias/{id}
+[33mc26102f[m Produto e associacao muitos para muitos
+[33m80d6b82[m Criando operação de instanciação
+[33m9ec9c9b[m Criando repository e service para Categoria
+[33m29a0bc1[m Acrescentado banco de dados H2 e criacao automatica da base de dados
+[33m2bc6bce[m Testando a primeira classe de dominio - Categoria
+[33m09a3fcb[m REST testado
+[33m2f6a260[m Projeto criado
