@@ -34,7 +34,7 @@ import com.luisassulfi.cursomc.repositories.ProdutoRepository;
 
 @Service
 public class DBService {
-	
+
 	@Autowired
 	private CategoriaRepository categoriaRepository;
 
@@ -52,16 +52,16 @@ public class DBService {
 
 	@Autowired
 	private EnderecoRepository enderecoRepository;
-	
+
 	@Autowired
 	private PedidoRepository pedidoRepository;
-	
+
 	@Autowired
 	private PagamentoRepository pagamentoRepository;
-	
+
 	@Autowired
 	private ItemPedidoRepository itemPedidoRepository;
-	
+
 	@Autowired
 	private BCryptPasswordEncoder encoder;
 
@@ -85,7 +85,7 @@ public class DBService {
 		Produto p9 = new Produto(null, "Abajour", 100.00);
 		Produto p10 = new Produto(null, "Pendente", 180.00);
 		Produto p11 = new Produto(null, "Shampoo", 90.00);
-		
+
 		cat1.getProdutos().addAll(Arrays.asList(p1, p2, p3));
 		cat2.getProdutos().addAll(Arrays.asList(p2, p4));
 		cat3.getProdutos().addAll(Arrays.asList(p5, p6));
@@ -111,24 +111,46 @@ public class DBService {
 
 		Estado est1 = new Estado(null, "Minas Gerais");
 		Estado est2 = new Estado(null, "São Paulo");
+		Estado est3 = new Estado(null, "Amapá");
+		Estado est4 = new Estado(null, "Santa Catarina");
+		Estado est5 = new Estado(null, "Acre");
+		Estado est6 = new Estado(null, "Espirito Santo");
+		Estado est7 = new Estado(null, "Rio Grande do Sul");
+		Estado est8 = new Estado(null, "Macapá");
+		Estado est9 = new Estado(null, "Mato Grosso");
+		Estado est10 = new Estado(null, "Mato Grosso do Sul");
+		Estado est11 = new Estado(null, "Goiás");
+		Estado est12 = new Estado(null, "Amazonas");
 
+		//Cidades de Minas Gerais
 		Cidade c1 = new Cidade(null, "Uberlândia", est1);
+		Cidade c4 = new Cidade(null, "Belo Horizonte", est1);
+		Cidade c5 = new Cidade(null, "Jacutinga", est1);
+		Cidade c6 = new Cidade(null, "Pouso Alegre", est1);
+		
+		est1.getCidades().addAll(Arrays.asList(c1, c4, c5, c6));
+		
 		Cidade c2 = new Cidade(null, "São Paulo", est2);
 		Cidade c3 = new Cidade(null, "Campinas", est2);
+		Cidade c7 = new Cidade(null, "Amparo", est2);
+		Cidade c8 = new Cidade(null, "Jaguariuna", est2);
 
-		est1.getCidades().addAll(Arrays.asList(c1));
-		est2.getCidades().addAll(Arrays.asList(c2, c3));
-
-		estadoRepository.saveAll(Arrays.asList(est1, est2));
-		cidadeRepository.saveAll(Arrays.asList(c1, c2, c3));
-
-		Cliente cli1 = new Cliente(null, "Luis Daniel Assulfi", "lassulfi@gmail.com", "36378912377", TipoCliente.PESSOAFISICA, encoder.encode("123"));
-		cli1.getTelefones().addAll(Arrays.asList("27363323", "93838393"));
 		
-		Cliente cli2 = new Cliente(null, "Maria Silva", "maria.silva@gmail.com", "31628382740", TipoCliente.PESSOAFISICA, encoder.encode("123"));
+		est2.getCidades().addAll(Arrays.asList(c2, c3, c7, c8));
+
+		estadoRepository
+				.saveAll(Arrays.asList(est1, est2, est3, est4, est5, est6, est7, est8, est9, est10, est11, est12));
+		cidadeRepository.saveAll(Arrays.asList(c1, c2, c3, c4, c5, c6, c7, c8));
+
+		Cliente cli1 = new Cliente(null, "Luis Daniel Assulfi", "lassulfi@gmail.com", "36378912377",
+				TipoCliente.PESSOAFISICA, encoder.encode("123"));
+		cli1.getTelefones().addAll(Arrays.asList("27363323", "93838393"));
+
+		Cliente cli2 = new Cliente(null, "Maria Silva", "maria.silva@gmail.com", "31628382740",
+				TipoCliente.PESSOAFISICA, encoder.encode("123"));
 		cli2.addPerfil(Perfil.ADMIN);
 		cli2.getTelefones().addAll(Arrays.asList("23401192", "998108194"));
-		
+
 		Endereco e1 = new Endereco(null, "Rua Flores", "300", "Apto 203", "Jardim", "38220834", c1, cli1);
 		Endereco e2 = new Endereco(null, "Avenida Matos", "105", "Sala 800", "Centro", "38777012", c2, cli1);
 		Endereco e3 = new Endereco(null, "Avenida Floariano", "2106", null, "Centro", "29777012", c2, cli2);
@@ -152,23 +174,23 @@ public class DBService {
 				null);
 		ped2.setPagamento(pagto2);
 		ped2.setEnderecoDeEntrega(e2);
-		
+
 		cli1.getPedidos().addAll(Arrays.asList(ped1, ped2));
-		
+
 		pedidoRepository.saveAll(Arrays.asList(ped1, ped2));
 		pagamentoRepository.saveAll(Arrays.asList(pagto1, pagto2));
-		
+
 		ItemPedido ip1 = new ItemPedido(ped1, p1, 0.00, 1, 2000.00);
 		ItemPedido ip2 = new ItemPedido(ped1, p3, 0.00, 2, 80.00);
 		ItemPedido ip3 = new ItemPedido(ped2, p2, 100.00, 1, 800.00);
-			
+
 		ped1.getItens().addAll(Arrays.asList(ip1, ip2));
 		ped2.getItens().addAll(Arrays.asList(ip3));
-		
+
 		p1.getItens().addAll(Arrays.asList(ip1));
 		p2.getItens().addAll(Arrays.asList(ip3));
 		p3.getItens().addAll(Arrays.asList(ip2));
-		
+
 		itemPedidoRepository.saveAll(Arrays.asList(ip1, ip2, ip3));
 	}
 }
