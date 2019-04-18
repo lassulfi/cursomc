@@ -4,7 +4,7 @@ package com.luisassulfi.cursomc.services.validation.utils;
 public class BR {
 	
 	//CPF
-	private static final int[] weightCPF = {11, 10, 9, 6, 7, 6, 5, 4, 3, 2};
+	private static final int[] weightCPF = {11, 10, 9, 8, 7, 6, 5, 4, 3, 2};
 	//CNPJ
 	private static final int[] weightCNPJ = {6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2};
 	
